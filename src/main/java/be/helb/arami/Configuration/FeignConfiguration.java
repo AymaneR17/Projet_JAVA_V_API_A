@@ -22,6 +22,6 @@ public class FeignConfiguration {
                 .client(new OkHttpClient())
                 .encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
-                .target(DataAccessTracingClient.class, "https://localhost:8181/");
+                .target(DataAccessTracingClient.class, "http://localhost:8181/");
     }
 }
