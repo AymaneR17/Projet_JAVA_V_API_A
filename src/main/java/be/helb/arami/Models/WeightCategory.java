@@ -17,7 +17,7 @@ public class WeightCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String nameWeightCategory;
-    //fk fighterId
+
     @OneToMany(mappedBy = "weightCategory")
     private List<Fighter> fighters;
 

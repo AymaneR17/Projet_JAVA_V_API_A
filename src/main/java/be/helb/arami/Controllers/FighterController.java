@@ -7,6 +7,7 @@ import be.helb.arami.DTO.FighterRetiredDTO;
 import be.helb.arami.Models.Fighter;
 import be.helb.arami.Services.FighterService;
 import feign.Param;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,9 @@ import java.util.Optional;
 public class FighterController {
 
     FighterService fighterService;
-DataAccessTracingClient dataAccessTracingClient;
+    DataAccessTracingClient dataAccessTracingClient;
 
+    @Autowired
     public FighterController (FighterService fighterService, DataAccessTracingClient dataAccessTracingClient){
         this.fighterService = fighterService;
         this.dataAccessTracingClient = dataAccessTracingClient;
@@ -126,6 +128,7 @@ DataAccessTracingClient dataAccessTracingClient;
         }
     }
 
+    //methode qui apelle l'api b pour recuperer les fighter retraite
    /* public List<FighterRetiredDTO> getRetiredFighter(@Param("id") Long fighterId, @Param("isRetired") Boolean isRetired) {
          dataAccessTracingClient.getFighterRetiredById(fighterId, isRetired);
     }*/

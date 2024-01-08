@@ -6,6 +6,7 @@ import be.helb.arami.DAO.WeightCategoryRepository;
 import be.helb.arami.Models.Fighter;
 import be.helb.arami.Models.Organisation;
 import be.helb.arami.Models.WeightCategory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class OrganisationService {
 
     OrganisationRepository organisationRepository;
 
-
+    @Autowired
     public OrganisationService (OrganisationRepository organisationRepository){
         this.organisationRepository = organisationRepository;
     }

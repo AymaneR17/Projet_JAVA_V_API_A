@@ -6,6 +6,7 @@ import be.helb.arami.Models.Fighter;
 import be.helb.arami.Models.Organisation;
 import be.helb.arami.Services.FighterService;
 import be.helb.arami.Services.OrganisationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ public class OrganisationController {
     OrganisationService organisationService;
     FighterService fighterService;
 
+    @Autowired
     public OrganisationController(OrganisationService organisationService, FighterService fighterService){
         this.organisationService = organisationService;
         this.fighterService = fighterService;

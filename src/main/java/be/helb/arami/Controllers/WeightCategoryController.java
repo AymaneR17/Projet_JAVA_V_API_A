@@ -5,6 +5,7 @@ import be.helb.arami.Models.Fighter;
 import be.helb.arami.Models.WeightCategory;
 import be.helb.arami.Services.FighterService;
 import be.helb.arami.Services.WeightCategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,8 @@ public class WeightCategoryController {
     WeightCategoryService weightCategoryService;
     FighterService fighterService;
 
+
+    @Autowired
     public WeightCategoryController(WeightCategoryService weightCategoryService, FighterService fighterService){
         this.weightCategoryService = weightCategoryService;
         this.fighterService = fighterService;

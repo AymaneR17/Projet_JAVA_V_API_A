@@ -4,6 +4,7 @@ package be.helb.arami.Services;
 import be.helb.arami.Client.DataAccessTracingClient;
 import be.helb.arami.DAO.FighterRepository;
 import be.helb.arami.Models.Fighter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,10 +16,11 @@ public class FighterService {
     FighterRepository fighterRepository;
      DataAccessTracingClient dataAccessTracingClient;
 
-           public FighterService(FighterRepository fighterRepository, DataAccessTracingClient dataAccessTracingClient){
+     @Autowired
+     public FighterService(FighterRepository fighterRepository, DataAccessTracingClient dataAccessTracingClient){
                this.fighterRepository = fighterRepository;
                this.dataAccessTracingClient = dataAccessTracingClient;
-           }
+     }
 
 
     public Fighter find(String firstName) {

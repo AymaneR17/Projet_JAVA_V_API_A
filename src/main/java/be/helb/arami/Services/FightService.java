@@ -3,6 +3,7 @@ package be.helb.arami.Services;
 
 import be.helb.arami.DAO.FightRepository;
 import be.helb.arami.Models.Fight;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,6 +13,7 @@ public class FightService {
 
     public final FightRepository fightRepository;
 
+    @Autowired
     public FightService(FightRepository fightRepository) {
         this.fightRepository = fightRepository;
     }
@@ -30,16 +32,14 @@ public class FightService {
         if (existingFightOptional.isPresent()) {
             Fight existingFight = existingFightOptional.get();
 
-            // Mettez à jour les champs nécessaires
             existingFight.setPlace(updatedFight.getPlace());
             existingFight.setFighter1(updatedFight.getFighter1());
             existingFight.setFighter2(updatedFight.getFighter2());
             existingFight.setResult(updatedFight.getResult());
 
-            // Enregistrez les modifications dans la base de données
             return fightRepository.save(existingFight);
         }
-        return null; // Ou lancez une exception si nécessaire
+        return null;
     }
 
 
